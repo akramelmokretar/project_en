@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENSTA - Higher National School of Advanced Technologies Algiers</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 150'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' style='stop-color:%235C2D91;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23D91E48;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M 50 25 L 150 25 Q 180 25 190 40 L 210 40 Q 220 40 220 50 Q 220 60 210 60 L 190 60 Q 180 75 150 75 L 80 75' fill='url(%23grad1)' stroke='none'/%3E%3Ccircle cx='220' cy='50' r='8' fill='white'/%3E%3Ctext x='20' y='110' font-family='Arial Black, sans-serif' font-size='42' font-weight='900' fill='%23000000' letter-spacing='-1'%3EENSTA%3C/text%3E%3Ctext x='20' y='125' font-family='Arial, sans-serif' font-size='7.5' fill='%23666666' letter-spacing='0.5'%3ESmart Learning Management Technologies Innovées%3C/text%3E%3Cpath d='M 50 125 L 150 125 Q 180 125 190 110 L 210 110 Q 220 110 220 100 Q 220 90 210 90 L 190 90 Q 180 75 150 75 L 80 75' fill='url(%23grad1)' stroke='none'/%3E%3Ccircle cx='220' cy='100' r='8' fill='white'/%3E%3C/svg%3E" alt="ENSTA Logo">
+        </div>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#st">ST</a></li>
+            <li><a href="#mi">MI</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="nav-buttons">
+                <button class="btn-login">LOGIN</button>
+                <button class="btn-signup">SIGN UP</button>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Shape Your <span class="highlight">Future</span> in Technology</h1>
+            <p>Higher National School of Advanced Technologies - Algiers</p>
+            <div class="hero-cta">
+                <button class="cta-primary">Apply Now</button>
+                <button id="discoverBtn">Discover ENSTA</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="aboutSection">
+        <div class="about-content">
+            <h2>About ENSTA</h2>
+            <img src="aboutEnsta.jpg" alt="ENSTA Entrance" class="about-image">
+            <div class="about-text">
+                <p>The National Higher School of Advanced Technologies (ENSTA) was established by Executive Decree No. 22-314 of September 12, 2022. It replaces the former National School of Technology and the Higher School of Applied Sciences in Algiers, inheriting their assets and staff. As a public institution with scientific, cultural, and professional status, ENSTA provides advanced education, research, and technological development in fields such as industrial engineering, transport, automation, electronics, telecommunications, mechanics, electrotechnics, and process engineering. Since the 2023–2024 academic year, it has also added the highly sought-after Mathematics and Computer Science (MI) program. ENSTA stands as a center of excellence, offering top-tier training to support the nation's economic and industrial sectors.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Discover button functionality
+        document.getElementById('discoverBtn').addEventListener('click', function() {
+            const aboutSection = document.getElementById('aboutSection');
+            aboutSection.classList.toggle('active');
+            
+            // Smooth scroll to section
+            if (aboutSection.classList.contains('active')) {
+                aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    </script>
+</body>
+</html>
